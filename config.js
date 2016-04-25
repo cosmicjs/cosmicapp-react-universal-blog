@@ -4,7 +4,7 @@ export default {
     title: 'React Universal Blog'
   },
   bucket: {
-    slug: process.env.COSMIC_BUCKET || 'react-universal-blog',
+    slug: process.env.COSMIC_BUCKET || 'hey-dancers',
     media_url: 'https://cosmicjs.com/uploads'
   }
 }
