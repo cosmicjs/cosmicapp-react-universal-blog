@@ -19,8 +19,12 @@ module.exports = {
       test: /\.js$/,
       loaders: loaders,
       exclude: /node_modules/
-    }]
-  },
+    },
+    { 
+     test: /\.scss$/, 
+     loaders: ["style", "css", "sass"] 
+    }
+  ]},
   plugins: [
     new webpack.DefinePlugin({
       'process.env.COSMIC_BUCKET': JSON.stringify(process.env.COSMIC_BUCKET)
