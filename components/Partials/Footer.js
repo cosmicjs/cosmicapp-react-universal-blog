@@ -1,7 +1,8 @@
 // Footer.js
 import React, { Component } from 'react';
 
-require("../../styles/footer.scss");
+
+import AppStyles from '../../styles/footer.scss';
 
 
 export default class Footer extends Component {
@@ -24,7 +25,7 @@ export default class Footer extends Component {
     }
 
     return (
-      <footer className="partial-footer">
+      <footer className={AppStyles.foo}>
         <div className="container">
           <div className="row">
             <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

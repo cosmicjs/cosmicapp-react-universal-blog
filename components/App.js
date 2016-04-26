@@ -1,6 +1,8 @@
 // App.js
 import React, { Component } from 'react'
 
+import AppStyles from '../styles/footer.scss';
+
 
 // Dispatcher
 import AppDispatcher from '../dispatcher/AppDispatcher'
@@ -68,3 +70,4 @@ export default class App extends Component {
   }
 }
 
+console.log('what is in AppStyles ' + JSON.stringify(AppStyles));
