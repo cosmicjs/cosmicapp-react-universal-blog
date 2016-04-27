@@ -70,4 +70,4 @@ export default class App extends Component {
   }
 }
 
-console.log('what is in AppStyles ' + JSON.stringify(AppStyles));
+console.log('What is inside AppStyles ' + JSON.stringify(AppStyles));

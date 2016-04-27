@@ -22,7 +22,7 @@
     "react-bootstrap": "^0.29.2",
     "react-dom": "^15.0.0",
     "react-router": "^1.0.1",
-    "webpack": "^1.12.2"
+    "webpack": "^1.13.0"
   },
   "scripts": {
     "start": "npm run production",
