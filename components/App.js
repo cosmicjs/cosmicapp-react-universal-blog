@@ -1,7 +1,7 @@
 // App.js
 import React, { Component } from 'react'
 
-import AppStyles from '../styles/footer.scss';
+import AppStyles from '../styles/custom.scss';
 
 
 // Dispatcher
@@ -16,7 +16,7 @@ import Footer from './Partials/Footer'
 import Loading from './Partials/Loading'
 
 export default class App extends Component {
-  
+
   // Add change listeners to stores
   componentDidMount(){
     AppStore.addChangeListener(this._onChange.bind(this))
@@ -38,7 +38,7 @@ export default class App extends Component {
   }
 
   render(){
-    
+
     const data = AppStore.data
 
     // Show loading for browser

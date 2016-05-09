@@ -1,5 +1,7 @@
 
-$background: #5fe5ac;
+@import 'variables';
+@import 'defaults';
+
 
 
 p{
@@ -10,7 +12,7 @@ p{
 footer{
 
 	background: $background;
-   
+
 }
 
 
