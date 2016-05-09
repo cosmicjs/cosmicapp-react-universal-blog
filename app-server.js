@@ -4,7 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactDOMServer from 'react-dom/server'
 //required for material-ui
-import injectTapEventPlugin from 'react-tap-event-plugin'
+
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { match, RoutingContext, Route, IndexRoute } from 'react-router'
@@ -13,11 +13,7 @@ import hogan from 'hogan-express'
 import config from './config'
 
 
-//Needed for onTouchTap
-//Can go away when react 1.0 release
-//Check this repo:
-//https://github.com/zilverline/react-tap-event-plugin
-injectTapEventPlugin();
+
 
 // Actions
 import { getStore, getPageData } from './actions/actions'
