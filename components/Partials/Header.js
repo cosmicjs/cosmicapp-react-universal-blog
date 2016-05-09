@@ -1,31 +1,28 @@
-// Header.js
 import React, { Component } from 'react'
+import AppBar from 'material-ui/AppBar'
+import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-export default class Header extends Component {
+export default class Header extends Component  {
 
-  render(){
-    
-    const data = this.props.data
-    const hero = data.page.hero
-    const headline = data.page.headline
-    const subheadline = data.page.subheadline
+        getChildContext() {
+            return { muiTheme: getMuiTheme(baseTheme) };
+        }
 
-    return (
-      <div>
-        <header className="intro-header" style={ { backgroundImage: "url('" + hero + "')" } }>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div className="site-heading">
-                  <h1>{ headline }</h1>
-                  <hr className="small" />
-                  <span className="subheading">{ subheadline }</span>
+        render() {
+
+
+            return (
+                <div>
+                    <AppBar
+                        title="Title"
+                    />
+
                 </div>
-              </div>
-            </div>
-          </div>
-        </header>
-      </div>
-    )
-  }
-}
+            );
+        }
+    }
+
+    Header.childContextTypes = {
+        muiTheme: React.PropTypes.object.isRequired,
+    };
