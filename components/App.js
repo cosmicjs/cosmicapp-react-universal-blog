@@ -11,7 +11,7 @@ import AppDispatcher from '../dispatcher/AppDispatcher'
 import AppStore from '../stores/AppStore'
 
 // Components
-import Nav from './Partials/Nav'
+import Nav from './Partials/Header'
 import Footer from './Partials/Footer'
 import Loading from './Partials/Loading'
 

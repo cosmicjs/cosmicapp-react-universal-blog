@@ -36,9 +36,7 @@ export default class Header extends React.Component{
           //Build the menu items
           const menu_items = nav_items.map(( nav_item ) => {
             return (
-              <MenuItem key={ 'key-' + nav_item.value } onTouchTap={this.handleClose.bind(this)}>
-                <Link onClick={ this.handleClick } to={ '/' + nav_item.value }>{ nav_item.title }</Link>
-              </MenuItem>
+                  <MenuItem key={ 'key-' + nav_item.value }><Link onTouchTap={this.handleClose.bind(this)}  onClick={ this.handleClick } to={ '/' + nav_item.value }>{ nav_item.title }</Link></MenuItem>
             )
           })
 
@@ -48,8 +46,8 @@ export default class Header extends React.Component{
                     docked={false}
                     open={this.state.open}
                     onRequestChange={(open) => this.setState({open})}>
-                    { menu_items }
-                  </Drawer>
+                        { menu_items }
+                 </Drawer>
 
                   <AppBar
                     title="I Like Devils Blog"

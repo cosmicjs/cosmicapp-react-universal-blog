@@ -4,8 +4,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import config from '../../config'
 
-// Components
-import Header from '../Partials/Header'
 
 // Dispatcher
 import AppDispatcher from '../../dispatcher/AppDispatcher'
@@ -19,7 +17,7 @@ export default class Default extends Component {
   componentDidUpdate(){
     const data = this.props.data
     document.title = config.site.title + ' | ' + data.page.title
-    
+
     // Updated
     const page = data.page
     const page_slug = this.getSlug()
@@ -28,7 +26,7 @@ export default class Default extends Component {
   }
 
   getSlug(){
-    return this.props.location.pathname.replace('/','') 
+    return this.props.location.pathname.replace('/','')
   }
 
   getPageData(){
@@ -38,9 +36,9 @@ export default class Default extends Component {
       page_slug: page_slug
     })
   }
-  
+
   render(){
-    
+
     const slug = this.getSlug()
     const data = this.props.data
     const page = data.page
@@ -49,7 +47,6 @@ export default class Default extends Component {
 
     return (
        <div>
-        <Header data={ data }/>
         <div id="main-content" className="container">
           <div className="row">
             <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
