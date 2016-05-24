@@ -1,8 +1,13 @@
 // webpack.config.js
-var webpack = require('webpack')
+const webpack = require('webpack')
 //copy files
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require('path');
+
+const PATHS = {
+  fonts: path.join(__dirname, 'app/assets/fonts')
+};
 
 if(process.env.NODE_ENV === 'development'){
   var loaders = ['react-hot','babel']
