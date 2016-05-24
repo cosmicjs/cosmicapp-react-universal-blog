@@ -8,8 +8,8 @@ import React, { Component } from 'react';
 export default class Footer extends Component {
 
   render(){
-    
-    const data = this.props.data  
+
+    const data = this.props.data
     let footer_text
     if(data.globals.text){
       footer_text = data.globals.text.footer_text
@@ -25,8 +25,8 @@ export default class Footer extends Component {
     }
 
     return (
-      <footer className="footer">
-        <div className="container">
+      <footer>
+        <div className="footer-grid">
           <div className="row">
             <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <ul className="list-inline text-center">
@@ -63,4 +63,3 @@ export default class Footer extends Component {
     )
   }
 }
-

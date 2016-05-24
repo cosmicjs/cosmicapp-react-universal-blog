@@ -1,7 +1,7 @@
 // config.js
 export default {
   site: {
-    title: 'React Universal Blog'
+    title: 'I Like Devils Blog!'
   },
   bucket: {
     slug: process.env.COSMIC_BUCKET || 'hey-dancers',
