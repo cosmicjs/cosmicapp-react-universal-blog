@@ -1,5 +1,5 @@
 // Blog.js
-import React, { Component } from 'react'
+import React from 'react'
 import _ from 'lodash'
 import config from '../../config'
 
@@ -10,7 +10,7 @@ import BlogSingle from '../Partials/BlogSingle'
 // Dispatcher
 import AppDispatcher from '../../dispatcher/AppDispatcher'
 
-export default class Blog extends Component {
+export default class Blog extends React.Component{
 
   componentWillMount(){
     this.getPageData()
@@ -71,3 +71,5 @@ export default class Blog extends Component {
     )
   }
 }
+
+export default Blog;

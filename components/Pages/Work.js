@@ -1,5 +1,5 @@
 // Work.js
-import React, { Component } from 'react'
+import React from 'react'
 import _ from 'lodash'
 import config from '../../config'
 
@@ -10,7 +10,7 @@ import WorkSingle from '../Partials/WorkSingle'
 // Dispatcher
 import AppDispatcher from '../../dispatcher/AppDispatcher'
 
-export default class Work extends Component {
+export default class Work extends React.Component{
 
   componentWillMount(){
     this.getPageData()
@@ -72,3 +72,5 @@ export default class Work extends Component {
     )
   }
 }
+
+export default Work;

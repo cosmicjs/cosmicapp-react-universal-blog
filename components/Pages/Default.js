@@ -1,6 +1,6 @@
 
 // Default.js
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router'
 import config from '../../config'
 
@@ -8,7 +8,7 @@ import config from '../../config'
 // Dispatcher
 import AppDispatcher from '../../dispatcher/AppDispatcher'
 
-export default class Default extends Component {
+export default class Default extends React.Component{
 
   componentWillMount(){
     this.getPageData()
@@ -58,3 +58,5 @@ export default class Default extends Component {
     )
   }
 }
+
+export default Default;
