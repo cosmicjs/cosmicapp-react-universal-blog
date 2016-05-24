@@ -12,7 +12,6 @@ export default class Header extends React.Component{
 
   constructor(props){
     super(props);
-    this._handleClick = this._handleClick.bind(this);
     this.state = {open:false};
   }
 
