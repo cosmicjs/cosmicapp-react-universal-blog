@@ -8,7 +8,6 @@
   "description": "",
   "main": "app-server.js",
   "dependencies": {
-    "babel": "^5.8.29",
     "babel-core": "^6.8.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-runtime": "^6.9.0",
