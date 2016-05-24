@@ -1,5 +1,5 @@
 // App.js
-import React, { Component } from 'react'
+import React from 'react'
 
 import AppStyles from '../styles/custom.scss';
 
@@ -11,11 +11,11 @@ import AppDispatcher from '../dispatcher/AppDispatcher'
 import AppStore from '../stores/AppStore'
 
 // Components
-import Nav from './Partials/Header'
+import Header from './Partials/Header'
 import Footer from './Partials/Footer'
 import Loading from './Partials/Loading'
 
-export default class App extends Component {
+export default class App extends React.Component {
 
   // Add change listeners to stores
   componentDidMount(){
@@ -62,7 +62,7 @@ export default class App extends Component {
 
     return (
       <div>
-        <Nav data={ data }/>
+        <Header data={ data }/>
         { Routes }
         <Footer data={ data }/>
       </div>

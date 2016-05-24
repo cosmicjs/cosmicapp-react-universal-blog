@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>{{ site.title }}{{# page }} | {{ page.title }}{{/ page }}</title>
+  <title>BLAHH{{ site.title }}{{# page }} | {{ page.title }}{{/ page }}</title>
   <!-- Latest compiled and minified CSS -->
+  <link href="css/custom.css" rel="stylesheet" type="text/css">
 
   <!-- Custom CSS -->
   <!-- Custom Fonts -->
@@ -21,10 +22,11 @@
   <![endif]-->
 </head>
 <body class="hidden">
+
   <div id="app">{{{ reactMarkup }}}</div>
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/clean-blog.min.js"></script>
-  <script src="/dist/bundle.js"></script>
+  <script src="bundle.js"></script>
 </body>
 </html>

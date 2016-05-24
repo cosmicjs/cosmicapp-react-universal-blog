@@ -6,7 +6,11 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const path = require('path');
 
 const PATHS = {
-  fonts: path.join(__dirname, 'app/assets/fonts')
+  app: path.join(__dirname, './app-client.js'),
+  build: path.join(__dirname, './public'),
+  fonts: path.join(__dirname, './fonts'),
+  cssLoc: path.join(__dirname, './styles'),
+  imagesLoc: path.join(__dirname, './images')
 };
 
 if(process.env.NODE_ENV === 'development'){
@@ -14,34 +18,54 @@ if(process.env.NODE_ENV === 'development'){
 } else {
   var loaders = ['babel']
 }
+
 module.exports = {
   devtool: 'eval',
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
   //bundle app from here
-  entry: './app-client.js',
+  entry: {
+    app: PATHS.app
+  },
   output: {
-    path: __dirname + '/public/dist',
-    //output it to /public/dist/bundle.js
+    path: PATHS.build,
     filename: 'bundle.js',
-    publicPath: '/dist/'
+    publicPath: PATHS.build
   },
   devServer: {
     // This is required for webpack-dev-server. The path should
     // be an absolute path to your build destination.
-    outputPath: path.join(__dirname +  '/public/')
-},
+    outputPath: PATHS.build
+  },
+
   module: {
     loaders: [{
       test: /\.jsx?$/,
       loaders: ['react-hot', 'babel-loader?presets[]=es2015,presets[]=stage-1,presets[]=stage-2,presets[]=react,plugins[]=transform-runtime'],
       exclude: /node_modules/
     },
-    {
-     test: /\.scss$/,
-     loaders: ["style", "css", "sass"]
-    }
+    { test: /\.scss$/,
+      exclude: /node_modules/,
+      loader: ExtractTextPlugin.extract('style', 'css!sass')
+    },
+   {
+       test: /\.(jpg|jpeg|gif|png|svg)$/,
+       exclude: /node_modules/,
+       include: PATHS.imagesLoc,
+       loader: "file-loader?name=img/[name].[ext]"
+   },
+   {
+     test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+     exclude: /node_modules/,
+     include: PATHS.fonts,
+     loader: 'file-loader?limit=1024&name=fonts/[name].[ext]'
+   },
+   { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+     exclude: /node_modules/,
+     include: PATHS.fonts,
+     loader: "file-loader?limit=1024&name=fonts/[name].[ext]"
+   }
   ]},
   plugins: [
     new webpack.DefinePlugin({
@@ -49,6 +73,10 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: 'images/', to: 'img/' }
-    ])
+    ]),
+    new ExtractTextPlugin( 'css/custom.css', {
+      publicPath: PATHS.css,
+      allChunks: true 
+    })
  ]
 };
