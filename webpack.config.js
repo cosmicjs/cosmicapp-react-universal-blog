@@ -11,6 +11,9 @@ if(process.env.NODE_ENV === 'development'){
 }
 module.exports = {
   devtool: 'eval',
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   //bundle app from here
   entry: './app-client.js',
   output: {
