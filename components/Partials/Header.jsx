@@ -25,7 +25,22 @@ export default class Header extends React.Component{
   handleClose = () => this.setState({open: false});
 
         render() {
+          const data = this.props.data
+          const nav_items = data.globals.nav_items
 
+          // Prevent initial null
+          if(!nav_items){
+            return <div></div>
+          }
+
+          //Build the menu items
+          const menu_items = nav_items.map(( nav_item ) => {
+            return (
+              <MenuItem key={ 'key-' + nav_item.value } onTouchTap={this.handleClose.bind(this)}>
+                <Link onClick={ this.handleClick } to={ '/' + nav_item.value }>{ nav_item.title }</Link>
+              </MenuItem>
+            )
+          })
 
             return (
                 <div>
@@ -33,8 +48,7 @@ export default class Header extends React.Component{
                     docked={false}
                     open={this.state.open}
                     onRequestChange={(open) => this.setState({open})}>
-                    <MenuItem onTouchTap={this.handleClose.bind(this)}>Menu Item 1</MenuItem>
-                    <MenuItem onTouchTap={this.handleClose.bind(this)}>Menu Item 2</MenuItem>
+                    { menu_items }
                   </Drawer>
 
                   <AppBar
