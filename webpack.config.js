@@ -1,8 +1,6 @@
-// webpack.config.js
-const webpack = require('webpack')
-//copy files
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+var webpack = require("webpack");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const path = require('path');
 
 const PATHS = {
@@ -13,6 +11,7 @@ const PATHS = {
   imagesLoc: path.join(__dirname, './images')
 };
 
+
 if(process.env.NODE_ENV === 'development'){
   var loaders = ['react-hot','babel']
 } else {
@@ -20,63 +19,70 @@ if(process.env.NODE_ENV === 'development'){
 }
 
 module.exports = {
-  devtool: 'eval',
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
-  //bundle app from here
-  entry: {
-    app: PATHS.app
-  },
-  output: {
-    path: PATHS.build,
-    filename: 'bundle.js',
-    publicPath: PATHS.build
-  },
-  devServer: {
-    // This is required for webpack-dev-server. The path should
-    // be an absolute path to your build destination.
-    outputPath: PATHS.build
-  },
-
-  module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loaders: ['react-hot', 'babel-loader?presets[]=es2015,presets[]=stage-1,presets[]=stage-2,presets[]=react,plugins[]=transform-runtime'],
-      exclude: /node_modules/
+    devServer: {
+        inline: true,
+        port: 8080,
+        outputPath: PATHS.build
     },
-    { test: /\.scss$/,
-      exclude: /node_modules/,
-      loader: ExtractTextPlugin.extract('style', 'css!sass')
+    //bundle app from here
+    entry: {
+      app: PATHS.app
     },
-   {
-       test: /\.(jpg|jpeg|gif|png|svg)$/,
-       exclude: /node_modules/,
-       include: PATHS.imagesLoc,
-       loader: "file-loader?name=img/[name].[ext]"
-   },
-   {
-     test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-     exclude: /node_modules/,
-     include: PATHS.fonts,
-     loader: 'file-loader?limit=1024&name=fonts/[name].[ext]'
-   },
-   { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-     exclude: /node_modules/,
-     include: PATHS.fonts,
-     loader: "file-loader?limit=1024&name=fonts/[name].[ext]"
-   }
-  ]},
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.COSMIC_BUCKET': JSON.stringify(process.env.COSMIC_BUCKET)
-    }),
-    new CopyWebpackPlugin([
-      { from: 'images/', to: 'img/' }
-    ]),
-    new ExtractTextPlugin( 'css/custom.css', {
-      publicPath: PATHS.css,
-      allChunks: true 
-    })
- ]
-};
+    output: {
+      path: PATHS.build,
+      filename: 'bundle.js',
+      publicPath: PATHS.build
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loaders: ['react-hot', 'babel-loader?presets[]=es2015,presets[]=stage-1,presets[]=stage-2,presets[]=react,plugins[]=transform-runtime']
+            },
+            {
+                test: /\.scss$/,
+                loader: 'style!css!sass'
+            },
+            {
+                test: /\.css$/,
+                loader: 'css'
+            },
+            {
+                test: /\.(png|gif|jpe?g|svg)$/i,
+                loader: 'url?limit=50000&name=img/[name]' // limit ~50kb
+            },
+            {
+                test: /\.(otf|eot|ttf|woff|woff2)$/,
+                loader: 'file?name=assets/fonts/[name].[ext]'
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-loader'
+            }
+        ]
+    },
+    resolve: {
+        extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
+    },
+    node: {
+        console: true,
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty'
+    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['app', 'vendor']
+        }),
+        new webpack.DefinePlugin({
+          'process.env.COSMIC_BUCKET': JSON.stringify(process.env.COSMIC_BUCKET)
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin(
+            {
+                template: './public/index.html'
+            }
+        )
+    ]
+}

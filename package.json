@@ -19,10 +19,12 @@
     "history": "^1.13.0",
     "hogan-express": "^0.5.2",
     "lodash": "^3.10.1",
+    "node-sass": "^3.7.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-router": "^1.0.1",
     "react-tap-event-plugin": "^1.0.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.0"
   },
   "scripts": {
