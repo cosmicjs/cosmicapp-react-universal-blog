@@ -1,6 +1,6 @@
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const path = require('path');
 
 const PATHS = {
@@ -35,14 +35,18 @@ module.exports = {
     },
     module: {
         loaders: [
+
             {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loaders: ['react-hot', 'babel-loader?presets[]=es2015,presets[]=stage-1,presets[]=stage-2,presets[]=react,plugins[]=transform-runtime']
+            test: /.jsx?$/,
+            loader: 'babel',
+            exclude: /node_modules/,
+              query: {
+                presets: ['es2015', 'react', 'stage-1', 'stage-2']
+              },
             },
             {
                 test: /\.scss$/,
-                loader: 'style!css!sass'
+                loader: ExtractTextPlugin.extract('style', 'css!sass?sourceMap')
             },
             {
                 test: /\.css$/,
@@ -50,11 +54,12 @@ module.exports = {
             },
             {
                 test: /\.(png|gif|jpe?g|svg)$/i,
-                loader: 'url?limit=50000&name=img/[name]' // limit ~50kb
+                loader:'url-loader?limit=1024&name=public/img/[name].[ext]'
+                //loader: 'url?limit=50000&name=img/[name]' // limit ~50kb
             },
             {
                 test: /\.(otf|eot|ttf|woff|woff2)$/,
-                loader: 'file?name=assets/fonts/[name].[ext]'
+                loader: 'url-loader?limit=1024&name=public/fonts/[name].[ext]'
             },
             {
                 test: /\.html$/,
@@ -78,6 +83,7 @@ module.exports = {
         new webpack.DefinePlugin({
           'process.env.COSMIC_BUCKET': JSON.stringify(process.env.COSMIC_BUCKET)
         }),
+        new ExtractTextPlugin("css/custom.css"),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin(
             {
