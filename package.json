@@ -25,7 +25,8 @@
     "react-router": "^1.0.1",
     "react-tap-event-plugin": "^1.0.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "webpack-merge": "^0.13.0"
   },
   "scripts": {
     "start": "npm run production",

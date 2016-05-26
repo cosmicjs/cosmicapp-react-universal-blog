@@ -5,6 +5,19 @@ body {
 h1, h2, h3 {
   font-weight: 500; }
 
+@font-face {
+  font-family: Roboto;
+  src: url(/Users/lilian.couto/git/ilikedevils/publicfonts/Roboto-Regular.woff2) format("woff2"), url(/Users/lilian.couto/git/ilikedevils/publicfonts/Roboto-Regular.svg) format("svg"), url(/Users/lilian.couto/git/ilikedevils/publicfonts/Roboto-Regular.ttf) format("truetype");
+  font-weight: bold;
+  font-style: italic; }
+
+/* END Bold Italic */
+/* END Black Italic */
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0; }
+
 p {
   background-color: #bc5fe5; }
 

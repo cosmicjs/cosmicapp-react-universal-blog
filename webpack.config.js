@@ -1,14 +1,16 @@
+const path = require('path');
 var webpack = require("webpack");
+const merge = require('webpack-merge');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const path = require('path');
+const TARGET = process.env.npm_lifecycle_event;
 
 const PATHS = {
   app: path.join(__dirname, './app-client.js'),
   build: path.join(__dirname, './public'),
   fonts: path.join(__dirname, './fonts'),
   cssLoc: path.join(__dirname, './styles'),
-  imagesLoc: path.join(__dirname, './images')
+  images: path.join(__dirname, './images')
 };
 
 
@@ -37,29 +39,30 @@ module.exports = {
         loaders: [
 
             {
-            test: /.jsx?$/,
-            loader: 'babel',
-            exclude: /node_modules/,
-              query: {
-                presets: ['es2015', 'react', 'stage-1', 'stage-2']
-              },
+              test: /\.jsx?$/,
+              loaders: ['react-hot', 'babel-loader?presets[]=es2015,presets[]=stage-1,presets[]=stage-2,presets[]=react,plugins[]=transform-runtime'],
+              exclude: /node_modules/
+            },
+            { test: /\.scss$/,
+              exclude: /node_modules/,
+              loader: ExtractTextPlugin.extract('style', 'css!sass')
             },
             {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('style', 'css!sass?sourceMap')
+                test: /\.(jpg|jpeg|gif|png|svg)$/,
+                exclude: /node_modules/,
+                include: PATHS.images,
+                loader: "file-loader?limit=1024&name=img/[name].[ext]"
             },
             {
-                test: /\.css$/,
-                loader: 'css'
+              test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+              exclude: /node_modules/,
+              include: PATHS.fonts,
+              loader: 'file-loader?limit=1024&name=fonts/[name].[ext]'
             },
-            {
-                test: /\.(png|gif|jpe?g|svg)$/i,
-                loader:'url-loader?limit=1024&name=public/img/[name].[ext]'
-                //loader: 'url?limit=50000&name=img/[name]' // limit ~50kb
-            },
-            {
-                test: /\.(otf|eot|ttf|woff|woff2)$/,
-                loader: 'url-loader?limit=1024&name=public/fonts/[name].[ext]'
+            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+              exclude: /node_modules/,
+              include: PATHS.fonts,
+              loader: "file-loader?limit=1024&name=fonts/[name].[ext]"
             },
             {
                 test: /\.html$/,

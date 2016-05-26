@@ -3,6 +3,8 @@ import React from 'react'
 
 import AppStyles from '../styles/custom.scss';
 
+//Images
+import Background from '../images/about-bg.jpg';
 
 // Dispatcher
 import AppDispatcher from '../dispatcher/AppDispatcher'
