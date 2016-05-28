@@ -1,8 +1,25 @@
 body {
   font-family:$mui-base-font-family;
-  background:$mui-primary-color-light;
+  background-color:$mui-primary-color-light;
 }
 
 h1,h2,h3{
   font-weight: 500;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0; }
+
+
+p{
+	background-color:#bc5fe5;
+}
+
+
+footer{
+
+	background: $mui-primary-color-dark;
+
 }
