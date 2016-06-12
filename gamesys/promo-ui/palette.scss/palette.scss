@@ -1,0 +1,116 @@
+//NEUTRAL COLOURS
+$white : #FFF;
+$black : #000;
+$grey  : #666;
+
+//SEMANTIC NAMING
+
+//YELLOWS
+$golden       : #FDD835;
+$turbo        : #FFEA00;
+//REDS
+$fire         : #FF3C00;
+$scarlet      : #FF1800;
+//BLUES
+$blue         : #FFEA00;
+$persian-blue : #1D3AED;
+//GREENS
+$emerald      : #58D544;
+$harlequin    : #3BED1D;
+
+
+//COLOUR ADJUSTMENTS
+$tone-level   : 15%;
+$trans-level  : 0.5;
+
+
+//Build the palette for this promo
+$unicorn-palette: (
+
+  scarlet: (
+    base: $scarlet,
+    light: lighten($scarlet, $tone-level),
+    dark: darken($scarlet, $tone-level),
+    trans: transparentize($scarlet, $trans-level)
+  ),
+
+  emerald: (
+    base: $emerald,
+    light: lighten($emerald, $tone-level),
+    dark: darken($emerald, $tone-level),
+    trans: transparentize($emerald, $trans-level)
+  ),
+
+  persian-blue: (
+    base: $persian-blue,
+    light: lighten($persian-blue, $tone-level),
+    dark: darken($persian-blue, $tone-level),
+    trans: transparentize($persian-blue, $trans-level)
+  ),
+
+  turbo: (
+    base: $turbo,
+    light: lighten($turbo, $tone-level),
+    dark: darken($turbo, $tone-level),
+    trans: transparentize($turbo, $trans-level)
+  ),
+);
+
+
+//GET THE COLOUR/TONE FROM THE UNICORN PALETTE
+ @each $color-key, $color-variants in $unicorn-palette {
+    $base-color-value: map-get($color-variants, 'base');
+
+.#{$color-key} {
+      background-color: $base-color-value;
+
+      &:before { content: "#{$color-key}"; }
+      &:after { content: "#{$base-color-value}"; }
+
+      &--light {
+      background-color: map-get($color-variants, 'light' );
+      }
+
+      &--dark {
+      background-color: map-get($color-variants, 'dark' )
+      }
+
+      &--trans {
+      background-color: map-get($color-variants, 'trans' )
+      }
+
+      &--light, &--dark, &--trans{
+
+      &:before { content: "#{$color-key}"; }
+      &:after { content: "#{$base-color-value}"; }
+
+      }
+
+  }
+}
+
+
+
+h1{
+  color: colour(scarlet,dark);
+}
+
+
+//CUBES
+
+body{
+  font-family:'Roboto', helvetica;
+}
+.container{
+  max-width:1200px;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.cube{
+  width:150px;
+  height:150px;
+  color:$white;
+  font-size:0.9em;
+  vertical-align:middle;
+}
