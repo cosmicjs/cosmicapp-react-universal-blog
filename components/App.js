@@ -1,7 +1,7 @@
 // App.js
 import React from 'react'
 
-import AppStyles from '../styles/custom.scss';
+//import AppStyles from '../styles/custom.scss';
 
 //Images
 import Background from '../images/about-bg.jpg';
@@ -72,4 +72,4 @@ export default class App extends React.Component {
   }
 }
 
-console.log('What is inside AppStyles ' + JSON.stringify(AppStyles));
+//console.log('What is inside AppStyles ' + JSON.stringify(AppStyles));
