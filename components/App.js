@@ -1,7 +1,10 @@
 // App.js
 import React from 'react'
 
-//import AppStyles from '../styles/custom.scss';
+import register from 'ignore-styles'
+register(['.sass', '.scss', '.css'])
+
+import '../styles/custom.scss';
 
 //Images
 import Background from '../images/about-bg.jpg';

@@ -5,5 +5,5 @@
     "react",
     "stage-1",
     "stage-2"],
-  "plugins": ["transform-runtime"],
+  "plugins": ["transform-runtime"]
 }
