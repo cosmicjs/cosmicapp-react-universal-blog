@@ -21,7 +21,8 @@ if(process.env.NODE_ENV === 'development'){
 }
 
 module.exports = {
-  devtool: 'eval',
+  debug: true,
+  devtool: 'inline-source-map',
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
@@ -79,6 +80,8 @@ module.exports = {
     ]),
     new ExtractTextPlugin("css/custom.css", {
         allChunks: true
-      })
+      }),
+   new webpack.HotModuleReplacementPlugin(),
+   new webpack.NoErrorsPlugin()
  ]
 };

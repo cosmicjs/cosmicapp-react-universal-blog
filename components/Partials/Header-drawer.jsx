@@ -14,6 +14,9 @@ export default class Header extends React.Component{
     super(props);
     this.state = {open:false};
   }
+
+
+
         render() {
           const data = this.props.data
           const nav_items = data.globals.nav_items
@@ -31,12 +34,9 @@ export default class Header extends React.Component{
               })
 
             return (
-                <div>
-                  <Menu  pageWrapId={ "page-wrap" } >
+                  <Menu pageWrapId={ "page-wrap" } isOpen={ false }>
                     { menu_items }
                   </Menu>
-
-              </div>
             )
         }
     }
