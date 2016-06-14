@@ -1,6 +1,6 @@
 import React from 'react'
-//import { elastic as Menu } from 'react-burger-menu';
-var Menu = require('react-burger-menu').elastic;
+import {  elastic as Menu } from 'react-burger-menu';
+//var Menu = require('react-burger-menu').elastic;
 import { Route, Router } from 'react-router'
 import { Link } from 'react-router';
 import Radium from 'radium';
@@ -32,7 +32,7 @@ export default class Header extends React.Component{
 
             return (
                 <div>
-                  <Menu   pageWrapId={ "page-wrap" } >
+                  <Menu  pageWrapId={ "page-wrap" } >
                     { menu_items }
                   </Menu>
 
