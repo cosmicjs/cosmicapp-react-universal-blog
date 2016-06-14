@@ -56,6 +56,11 @@ module.exports = {
        include: PATHS.imagesLoc,
        loader: "file-loader?name=img/[name].[ext]"
    },
+   //Problem with snap not working
+   {
+    test: require.resolve('snapsvg'),
+    loader: 'imports-loader?this=>window,fix=>module.exports=0'
+    },
    // Font Definitions
 
    { test: /\.svg$/, loader: 'url?limit=65000&mimetype=image/svg+xml&name=fonts/[name].[ext]' },

@@ -15,7 +15,7 @@ import AppDispatcher from '../dispatcher/AppDispatcher'
 import AppStore from '../stores/AppStore'
 
 // Components
-import Header from './Partials/Header'
+import Header from './Partials/Header-drawer'
 import Footer from './Partials/Footer'
 import Loading from './Partials/Loading'
 
@@ -65,10 +65,12 @@ export default class App extends React.Component {
     const Routes = React.cloneElement(this.props.children, { data: data })
 
     return (
-      <div>
-        <Header data={ data }/>
-        { Routes }
-        <Footer data={ data }/>
+      <div id="outer-container">
+          <Header data={ data }/>
+            <div id="page-wrap">
+              { Routes }
+              <Footer data={ data }/>
+           </div>
       </div>
     )
   }
