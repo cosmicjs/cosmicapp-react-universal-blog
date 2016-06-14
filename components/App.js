@@ -1,8 +1,7 @@
 // App.js
 import React from 'react'
 
-import register from 'ignore-styles'
-register(['.sass', '.scss', '.css'])
+
 
 import '../styles/custom.scss';
 
