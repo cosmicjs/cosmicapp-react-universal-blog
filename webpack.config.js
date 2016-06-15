@@ -21,7 +21,8 @@ if(process.env.NODE_ENV === 'development'){
 }
 
 module.exports = {
-  devtool: 'eval',
+  debug: true,
+  devtool: 'inline-source-map',
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
@@ -48,13 +49,19 @@ module.exports = {
     },
     // Extract SCSS
     { test: /\.scss$/,
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader") },
+      loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+    },
    {
        test: /\.(jpg|jpeg|gif|png|svg)$/,
        exclude: /node_modules/,
        include: PATHS.imagesLoc,
        loader: "file-loader?name=img/[name].[ext]"
    },
+   //Problem with snap not working
+   {
+    test: require.resolve('snapsvg'),
+    loader: 'imports-loader?this=>window,fix=>module.exports=0'
+    },
    // Font Definitions
 
    { test: /\.svg$/, loader: 'url?limit=65000&mimetype=image/svg+xml&name=fonts/[name].[ext]' },
@@ -73,6 +80,8 @@ module.exports = {
     ]),
     new ExtractTextPlugin("css/custom.css", {
         allChunks: true
-      })
+      }),
+   new webpack.HotModuleReplacementPlugin(),
+   new webpack.NoErrorsPlugin()
  ]
 };

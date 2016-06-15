@@ -1,8 +1,7 @@
 // App.js
 import React from 'react'
 
-import register from 'ignore-styles'
-register(['.sass', '.scss', '.css'])
+
 
 import '../styles/custom.scss';
 
@@ -16,11 +15,15 @@ import AppDispatcher from '../dispatcher/AppDispatcher'
 import AppStore from '../stores/AppStore'
 
 // Components
-import Header from './Partials/Header'
+import SiteMenu from './Partials/SiteMenu'
 import Footer from './Partials/Footer'
 import Loading from './Partials/Loading'
+import Header from './Partials/Header'
+
 
 export default class App extends React.Component {
+
+
 
   // Add change listeners to stores
   componentDidMount(){
@@ -66,10 +69,13 @@ export default class App extends React.Component {
     const Routes = React.cloneElement(this.props.children, { data: data })
 
     return (
-      <div>
-        <Header data={ data }/>
-        { Routes }
-        <Footer data={ data }/>
+      <div id="outer-container">
+          <SiteMenu data={ data }/>
+          <Header/>
+            <div id="main-content" className="container">
+              { Routes }
+              <Footer data={ data }/>
+           </div>
       </div>
     )
   }
