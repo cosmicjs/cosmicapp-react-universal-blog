@@ -1,6 +1,7 @@
 body {
-  font-family:$mui-base-font-family;
-  background-color:$mui-primary-color-light;
+  font-family:$base-font;
+  background-color:$white;
+  color: colour(blue,dark);
 }
 
 h1,h2,h3{
@@ -20,6 +21,6 @@ p{
 
 footer{
 
-	background: $mui-primary-color-dark;
+	background-color: colour(blue,light);
 
 }

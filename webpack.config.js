@@ -22,7 +22,7 @@ if(process.env.NODE_ENV === 'development'){
 
 module.exports = {
   debug: true,
-  devtool: 'inline-source-map',
+  devtool: "#eval-source-map",
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
@@ -63,12 +63,10 @@ module.exports = {
     loader: 'imports-loader?this=>window,fix=>module.exports=0'
     },
    // Font Definitions
-
-   { test: /\.svg$/, loader: 'url?limit=65000&mimetype=image/svg+xml&name=fonts/[name].[ext]' },
-   { test: /\.woff$/, loader: 'url?limit=65000&mimetype=application/font-woff&name=fonts/[name].[ext]' },
-   { test: /\.woff2$/, loader: 'url?limit=65000&mimetype=application/font-woff2&name=fonts/[name].[ext]' },
-   { test: /\.[ot]tf$/, loader: 'url?limit=65000&mimetype=application/octet-stream&name=fonts/[name].[ext]' },
-   { test: /\.eot$/, loader: 'url?limit=65000&mimetype=application/vnd.ms-fontobject&name=fonts/[name].[ext]' }
+   { test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
+     exclude: /node_modules/,
+     loader: 'url-loader?importLoaders=1&limit=100000&mimetype=application/octet-stream&name=fonts/[name].[ext]'
+   }
   ]},
   plugins: [
     new webpack.DefinePlugin({
@@ -82,6 +80,11 @@ module.exports = {
         allChunks: true
       }),
    new webpack.HotModuleReplacementPlugin(),
-   new webpack.NoErrorsPlugin()
+   new webpack.NoErrorsPlugin(),
+   new webpack.DefinePlugin({
+    'process.env':{
+        'NODE_ENV': JSON.stringify('development')
+    }
+}),
  ]
 };

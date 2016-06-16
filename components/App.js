@@ -49,6 +49,7 @@ export default class App extends React.Component {
 
     const data = AppStore.data
 
+
     // Show loading for browser
     if(!data.ready){
 
@@ -80,5 +81,3 @@ export default class App extends React.Component {
     )
   }
 }
-
-//console.log('What is inside AppStyles ' + JSON.stringify(AppStyles));

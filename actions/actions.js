@@ -22,10 +22,6 @@ export function getStore(callback){
     let menu_title = _.findWhere(metafields, { key: 'menu-title' })
     globals.text.menu_title = menu_title.value
 
-    /*let logo_image = _.findWhere(metafields, { key: 'logo-image' })
-    globals.header.logo_image = logo_image.value
-    let logo_label = _.findWhere(metafields, { key: 'logo-label' })
-    globals.header.logo_label = logo_label.value*/
 
     let footer_text = _.findWhere(metafields, { key: 'footer-text' })
     globals.text.footer_text = footer_text.value
