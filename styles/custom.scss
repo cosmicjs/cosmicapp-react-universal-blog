@@ -1,31 +1,5 @@
 
 
-//Roboto
-$FontPath: "../fonts/roboto" !default;
-$FontName: "Roboto" !default;
-$FontVersion: "1.1.0" !default;
-
-/*@font-face {
-  font-family: 'Roboto', helvetica;
-  src: url(../fonts/roboto/Roboto-Regular.woff2) format("woff2"), url(../fonts/roboto/Roboto-Regular.svg) format("svg"), url(../fonts/roboto/Roboto-Regular.ttf) format("truetype");
-  font-weight: bold;
-  font-style: italic; }*/
-
-  @mixin fontdef-woff($FontPath, $FontName, $FontVersion:"1.0.0", $FontType:"Regular") {
-  	src:	url('#{$FontPath}/#{$FontName}-#{$FontType}.woff2?v=#{$FontVersion}') format('woff2'),
-  			url('#{$FontPath}/#{$FontName}-#{$FontType}.svg?v=#{$FontVersion}') format('svg'),
-  			url('#{$FontPath}/#{$FontName}-#{$FontType}.ttf?v=#{$FontVersion}') format('truetype');
-  }
-
-  /* BEGIN Light */
-  @font-face {
-  	font-family: Roboto;
-  	@include fontdef-woff($FontPath, $FontName, $FontVersion, "Light");
-  	font-weight: 300;
-  	font-style: normal;
-  }
-  /* END Light */
-
 body{
   background:pink;
 }
@@ -36,7 +10,7 @@ body{
 @import "components/react-burger-menu";
 
 
-//@import 'fontawesome/font-awesome';
+@import 'fontawesome/font-awesome';
 @import 'roboto/roboto';
 @import 'variables';
 @import 'colors';

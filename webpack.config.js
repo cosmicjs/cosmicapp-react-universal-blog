@@ -65,8 +65,8 @@ module.exports = {
    // Font Definitions
    { test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
      exclude: /node_modules/,
-     loader: 'url-loader?importLoaders=1&limit=100000&mimetype=application/octet-stream&name=fonts/[name].[ext]'
-   }
+     loader: 'url-loader?importLoaders=1&limit=100000&mimetype=application/octet-stream&name=public/[path][name].[ext]'
+   },
   ]},
   plugins: [
     new webpack.DefinePlugin({
