@@ -1,0 +1,36 @@
+html, body{
+  height:100%;
+  padding:0;
+  margin:0;
+
+  &*{
+    padding:0;
+    margin:0;
+  }
+}
+
+body {
+  @include font-size($base-font-size);
+  font-family:$base-font-family;
+  background-color:colour(grey,light);
+  color:colour(blue,dark);
+}
+
+
+h1,h2,h3{
+  font-family: $heading-font-family;
+  font-weight: 500;
+  @include v-margin($margin-bottom: $margin-medium);
+}
+
+
+p{
+	background-color:#bc5fe5;
+}
+
+
+footer{
+
+	background-color: colour(blue,light);
+
+}

@@ -1,8 +1,5 @@
 
 
-body{
-  background:pink;
-}
 
 
 //Components
@@ -12,6 +9,9 @@ body{
 
 @import 'fontawesome/font-awesome';
 @import 'roboto/roboto';
-@import 'variables';
-@import 'colors';
-@import 'defaults';
+@import 'lithos/lithos';
+@import 'lib/variables';
+@import 'lib/margins';
+@import 'lib/typography';
+@import 'lib/colors';
+@import 'lib/defaults';
