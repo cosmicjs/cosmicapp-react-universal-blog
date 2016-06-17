@@ -1,14 +1,10 @@
 // Footer.js
 import React, { Component } from 'react';
 
-
-
-
-
 export default class Footer extends Component {
 
-  render(){
 
+  render(){
     const data = this.props.data
     let footer_text
     if(data.globals.text){

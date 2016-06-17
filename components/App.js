@@ -18,7 +18,7 @@ import AppStore from '../stores/AppStore'
 import SiteMenu from './Partials/SiteMenu'
 import Footer from './Partials/Footer'
 import Loading from './Partials/Loading'
-import Header from './Partials/Header'
+import Header from './Partials/Header-1'
 
 
 export default class App extends React.Component {
@@ -72,7 +72,7 @@ export default class App extends React.Component {
     return (
       <div id="outer-container">
           <SiteMenu data={ data }/>
-          <Header/>
+          <Header data={ data }/>
             <div id="main-content" className="container">
               { Routes }
               <Footer data={ data }/>
