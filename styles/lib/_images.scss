@@ -1,0 +1,4 @@
+@mixin image-ratio($width: 30%, $ratio: 16/9) {
+  width: $width;
+  padding-bottom: $width/$ratio;
+}

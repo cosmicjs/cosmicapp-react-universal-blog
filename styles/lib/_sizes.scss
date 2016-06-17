@@ -1,0 +1,3 @@
+@mixin containers($container-width, $prefix:'min-'){
+  #{$prefix}width: map-get($containers, $container-width)
+}

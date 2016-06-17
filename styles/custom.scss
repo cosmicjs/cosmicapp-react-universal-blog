@@ -6,14 +6,18 @@
 
 //Scafolding
 @import 'lib/variables';
+@import 'lib/colors';
+@import 'lib/images';
 @import 'mappy/mappy';
 @import 'lib/margins';
+@import 'lib/sizes';
 @import 'lib/typography';
-@import 'lib/colors';
+
 
 //Reset
 @import 'lib/defaults';
 
 //Components
-@import "components/App";
-@import "components/react-burger-menu";
+@import "components/partials/App";
+@import "components/partials/siteMenu";
+@import "components/partials/Header";

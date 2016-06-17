@@ -1,0 +1,30 @@
+#siteHeader{
+
+  margin:0 auto;
+  @include containers(md, 'max-');
+
+
+  @include mappy-bp(small 920px) {
+
+      background:purple;
+
+
+
+  }
+
+  .logo {
+    @include image-ratio(40%, 640/480);
+    position: relative;
+    img{
+      position: absolute;
+  	  top: 0;
+  	  left: 0;
+  	  width: 100%;
+  	  height: 100%;
+    }
+    span{
+      font-family:$heading-font-family-black;
+      background-color:black;
+    }
+  }
+}

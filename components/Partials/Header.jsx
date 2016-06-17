@@ -29,8 +29,10 @@ export default class Header extends Component {
 
     return (
       <div id="siteHeader">
-        <img className='logo' width="300" src='https://cosmicjs.imgix.net/586d3d40-3252-11e6-acaf-9f0b4eab6555-ild-logo.png/'>
-        <span>The Heading!</span>
+        <div className='logo'>
+          <img className='devil' src="https://cosmicjs.imgix.net/586d3d40-3252-11e6-acaf-9f0b4eab6555-ild-logo.png"/>
+          <span className='strapline'>I like Devils</span>
+        </div>
       </div>
     )
   }

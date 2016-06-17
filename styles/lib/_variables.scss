@@ -1,23 +1,26 @@
 // ============================================================================
 // BREAKPOINTS
 // Reference: http://mydevice.io/devices/
+// Bootstrap inspired: http://v4-alpha.getbootstrap.com/layout/grid/
 // ============================================================================
 
+//containers
+$containers: (
+  xs  :'auto',
+  sm  : 576px,
+  md  : 720px,
+  lg  : 940px,
+  xl  : 1140px
+);
 
-
-$x-small-portrait     : 320px;
-$x-small-landscape    : 480px;
-$small-portrait       : 360px;
-$small-landscape      : 640px;
-$x-medium-portrait    : 768px;
-$x-medium-landscape   : 1024px;
-$medium-portrait      : 992px;
-$medium-landscape     : 1280px;
-$large-desktop        : 1024px;
-$x-large-desktop      : 1824px;
-
-
-
+//containers
+$screens: (
+  xs :0,
+  sm :544px,
+  md :768px,
+  lg :940px,
+  xl :1140px
+);
 
 
 

@@ -18,7 +18,7 @@ import AppStore from '../stores/AppStore'
 import SiteMenu from './Partials/SiteMenu'
 import Footer from './Partials/Footer'
 import Loading from './Partials/Loading'
-import Header from './Partials/Header-1'
+import Header from './Partials/Header'
 
 
 export default class App extends React.Component {
