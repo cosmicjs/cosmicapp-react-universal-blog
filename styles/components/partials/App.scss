@@ -10,12 +10,12 @@
 
       background-color:colour(persian-blue,turbo);
 
-      @include mappy-bp(small 920px) {
+      @include mappy-bp(sm md) {
         background-color:colour(turbo,base);
         max-width: 100%;
      }
 
-      @include mappy-bp(large){
+      @include mappy-bp(xl){
         background-color:colour(persian-blue,light);
      }
 }

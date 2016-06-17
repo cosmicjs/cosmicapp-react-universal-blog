@@ -37,8 +37,13 @@
 
 /* Wrapper for item list */
 .bm-item-list {
-  color: #b8b7ad;
-  padding: 0.8em;
+  color:$white;
+  font-family: $heading-font-family;
+
+  &a{
+    color:$white;
+
+  }
 }
 
 /* Styling of overlay */

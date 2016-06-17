@@ -16,7 +16,7 @@ a {
 body {
   @include font-size($base-font-size);
   font-family:$base-font-family;
-  background-color:colour(grey,light);
+  background-color:$white;
   color:colour(blue,dark);
 }
 

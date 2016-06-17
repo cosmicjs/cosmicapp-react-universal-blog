@@ -1,30 +1,53 @@
 #siteHeader{
 
   margin:0 auto;
-  @include containers(md, 'max-');
+  @include containers(md, 'xs-');
 
 
-  @include mappy-bp(small 920px) {
-
-      background:purple;
-
-
-
-  }
 
   .logo {
-    @include image-ratio(40%, 640/480);
     position: relative;
+    @include containers(xs, $prefix:'max-')
+    @include v-margin($margin-bottom: $margin-medium);
+    @include h-margin();
+
     img{
-      position: absolute;
-  	  top: 0;
-  	  left: 0;
-  	  width: 100%;
-  	  height: 100%;
+      width: 100%;
+      @include v-margin();
     }
     span{
+      @include v-margin();
       font-family:$heading-font-family-black;
-      background-color:black;
+      color:$black;
+      @include font-size($xl-font-size);
     }
+
+    @include mappy-bp(sm md) {
+      @include containers(sm, $prefix:'max-')
+
+      img{
+        width: 30%;
+      }
+    }
+
+    @include mappy-bp(md lg) {
+      @include containers(sm, $prefix:'max-')
+
+      img{
+        width: 30%;
+      }
+    }
+
+    @include mappy-bp(lg xl) {
+      @include containers(sm, $prefix:'max-')
+
+      img{
+        width: 30%;
+      }
+    }
+
+
   }
+
+
 }
