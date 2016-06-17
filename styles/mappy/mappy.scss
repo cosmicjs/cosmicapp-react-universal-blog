@@ -1,0 +1,14 @@
+@import "mappy-breakpoints";
+
+$breakpoints: (
+  small:  480px,
+  large:  800px
+  );
+
+$mappy-queries: (
+  phone : mappy-bp(h max small),
+  tablet: mappy-bp(small large),
+  numbers: mappy-bp(960px 1200px),
+  features: mappy-bp(small orientation portrait),
+  type: mappy-bp(small, $type: screen)
+);

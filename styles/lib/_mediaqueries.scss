@@ -1,29 +1,21 @@
-@mixin mobile {
-  @media (min-width: #{$x-small-portrait }) and (max-width: #{$x-small-landscape - 1px}) {
-    @content;
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: #{$x-small-portrait}) { @content; }
   }
-}
 
-@mixin landscape {
-  @media (min-width: #{$x-small-landscape }) and (max-width: #{$x-medium-portrait - 1px}) {
-    @content;
+  @else if $class == sm {
+    @media (min-width: #{$x-medium-portrait}) and (max-width: #{$x-medium-portrait - 1px} ) { @content; }
   }
-}
 
-@mixin tablet {
-  @media (min-width: #{$x-medium-portrait }) and (max-width: #{$x-medium-landscape - 1px}) {
-    @content;
+  @else if $class == md {
+    @media (min-width: #{$medium-portrait}) { @content; }
   }
-}
 
-@mixin desktop {
-  @media (min-width: #{$x-medium-landscape }) and (max-width: #{$large-desktop - 1px}) {
-    @content;
+  @else if $class == lg {
+    @media (min-width: #{$large-desktop}) { @content; }
   }
-}
 
-@mixin x-large {
-  @media (min-width: #{$large-desktop}){
-    @content;
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
   }
 }

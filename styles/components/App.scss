@@ -1,23 +1,21 @@
 #outer-container{
 
+  width:100%;
+
+}
+
+#main-content{
+
+      min-width:100%;
+
       background-color:colour(persian-blue,turbo);
 
-      @include landscape {
-      background-color:colour(turbo,dark);
+      @include mappy-bp(small 920px) {
+        background-color:colour(turbo,base);
+        max-width: 100%;
      }
 
-
-      @include tablet {
-      background-color:colour(red,light);
-    }
-
-      @include desktop {
-      background-color:colour(persian-blue,light);
-      border:1px solid black;
-    }
-
-      @include x-large {
-      background-color:colour(emerald,light);
-      border:1px solid green;
-    }
+      @include mappy-bp(large){
+        background-color:colour(persian-blue,light);
+     }
 }
