@@ -46,7 +46,7 @@ $colours: (
 
 );
 
-//GET THE COLOUR/TONE FROM THE UNICORN PALETTE
+//from the colours
 @function colour($venture-colour, $colour-variant) {
   // map inception
   @return map-get(map-get($colours, $venture-colour), $colour-variant);

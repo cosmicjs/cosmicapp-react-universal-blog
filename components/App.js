@@ -1,9 +1,9 @@
 // App.js
 import React from 'react'
 
-
-
 import '../styles/custom.scss';
+
+
 
 //Images
 import Background from '../images/about-bg.jpg';

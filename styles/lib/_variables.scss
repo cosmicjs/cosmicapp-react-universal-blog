@@ -1,4 +1,25 @@
 // ============================================================================
+// BREAKPOINTS
+// Reference: http://mydevice.io/devices/
+// ============================================================================
+
+
+
+$x-small-portrait     : 320px;
+$x-small-landscape    : 480px;
+$small-portrait       : 360px;
+$small-landscape      : 640px;
+$x-medium-portrait    : 768px;
+$x-medium-landscape   : 1024px;
+$medium-portrait      : 800px;
+$medium-landscape     : 1280px;
+$large-desktop        : 1224px;
+$x-large-desktop      : 1824px;
+
+
+
+
+// ============================================================================
 // COLOURS
 // ============================================================================
 //NEUTRAL COLOURS
@@ -43,6 +64,7 @@ $base-font-family: Roboto, Verdana, Tahoma !default;
 
 //Heading Font
 $heading-font-family: "LithosPro-Regular", Verdana, Tahoma !default;
+$heading-font-family-black: "LithosPro-Black", Verdana, Tahoma !default;
 
 
 // ============================================================================

@@ -1,0 +1,23 @@
+#outer-container{
+
+      background-color:colour(persian-blue,turbo);
+
+      @include landscape {
+      background-color:colour(turbo,dark);
+     }
+
+
+      @include tablet {
+      background-color:colour(red,light);
+    }
+
+      @include desktop {
+      background-color:colour(persian-blue,light);
+      border:1px solid black;
+    }
+
+      @include x-large {
+      background-color:colour(emerald,light);
+      border:1px solid green;
+    }
+}

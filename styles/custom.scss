@@ -1,17 +1,19 @@
 
-
-
-
-//Components
-//react-burger-menu
-@import "components/react-burger-menu";
-
-
+//fonts
 @import 'fontawesome/font-awesome';
 @import 'roboto/roboto';
 @import 'lithos/lithos';
+
+//Scafolding
 @import 'lib/variables';
+@import 'lib/mediaqueries';
 @import 'lib/margins';
 @import 'lib/typography';
 @import 'lib/colors';
+
+//Reset
 @import 'lib/defaults';
+
+//Components
+@import "components/App";
+@import "components/react-burger-menu";
