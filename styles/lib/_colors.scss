@@ -44,6 +44,13 @@ $colours: (
     trans: transparentize($turbo, $trans-level)
   ),
 
+
+    violet: (
+      base: $violet,
+      light: lighten($violet, $tone-level),
+      dark: darken($violet, $tone-level),
+      trans: transparentize($violet, $trans-level)
+    ),
 );
 
 //from the colours

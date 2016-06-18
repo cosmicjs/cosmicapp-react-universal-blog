@@ -1,19 +1,18 @@
 #siteHeader{
 
-  margin:0 auto;
-  @include containers(md, 'xs-');
+
 
 
 
   .logo {
     position: relative;
-    @include containers(xs, $prefix:'max-')
+    width:100%;
     @include v-margin($margin-bottom: $margin-medium);
-    @include h-margin();
-
+    text-align: center;
     img{
-      width: 100%;
+      width: 35%;
       @include v-margin();
+      @include h-margin();
     }
     span{
       @include v-margin();
@@ -21,30 +20,28 @@
       color:$black;
       @include font-size($xl-font-size);
     }
-
-    @include mappy-bp(sm md) {
-      @include containers(sm, $prefix:'max-')
-
-      img{
-        width: 30%;
-      }
-    }
-
-    @include mappy-bp(md lg) {
-      @include containers(sm, $prefix:'max-')
+    //logo gets smaller as page widens
+    @include mappy-bp(sm) {
 
       img{
         width: 30%;
       }
     }
 
-    @include mappy-bp(lg xl) {
-      @include containers(sm, $prefix:'max-')
+    @include mappy-bp(md) {
 
       img{
-        width: 30%;
+        width: 25%;
       }
     }
+
+    @include mappy-bp(lg) {
+
+      img{
+        width: 20%;
+      }
+    }
+
 
 
   }

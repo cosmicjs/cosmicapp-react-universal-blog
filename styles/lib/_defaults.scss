@@ -1,9 +1,10 @@
 html, body{
+
   height:100%;
   padding:0;
   margin:0;
 
-  &*{
+  *{
     padding:0;
     margin:0;
   }
@@ -17,7 +18,8 @@ body {
   @include font-size($base-font-size);
   font-family:$base-font-family;
   background-color:$white;
-  color:colour(blue,dark);
+  color:colour(grey,dark);
+
 }
 
 h1,h2{

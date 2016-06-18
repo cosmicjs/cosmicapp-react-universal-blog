@@ -5,21 +5,22 @@
 // ============================================================================
 
 //containers
+//multiples of 12
 $containers: (
   xs  :'auto',
   sm  : 576px,
   md  : 720px,
-  lg  : 940px,
-  xl  : 1140px
+  lg  : 936px,
+  xl  : 1020px
 );
 
 //containers
 $screens: (
-  xs :0,
-  sm :544px,
+  xs :360px,
+  sm :540px,
   md :768px,
-  lg :940px,
-  xl :1140px
+  lg :984px,
+  xl :1200px
 );
 
 

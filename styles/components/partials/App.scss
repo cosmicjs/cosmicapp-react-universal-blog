@@ -1,21 +1,51 @@
-#outer-container{
-
+//Wraps everything
+#app{
   width:100%;
+  height:100%;
 
-}
 
-#main-content{
+  //outer-container - covers menu
+  #outer-container{
 
-      min-width:100%;
 
-      background-color:colour(persian-blue,turbo);
 
-      @include mappy-bp(sm md) {
-        background-color:colour(turbo,base);
-        max-width: 100%;
-     }
+    //site content- centers in page
+    #main-content{
 
-      @include mappy-bp(xl){
+      @include containers(max xs);
+      @include h-margin();
+
+      //small screens
+      @include mappy-bp(xs sm) {
+        @include containers(sm, 'max-');
         background-color:colour(persian-blue,light);
-     }
+      }
+
+      //medium screens
+      @include mappy-bp(sm md) {
+        @include containers(md);
+        @include containers(lg, $prefix:'max-');
+        background-color:colour(emerald,base);
+      }
+
+      //large -- if necessary
+      @include mappy-bp(md lg) {
+        @include containers(md)
+        @include containers(lg, $prefix:'max-');
+        background-color:colour(turbo,base);
+      }
+
+      // all the larger widths
+      @include mappy-bp(lg) {
+        @include containers(lg)
+        @include containers(xl, $prefix:'max-');
+        background-color:colour(violet,base);
+      }
+
+    }
+    //END - site content
+
+  }
+  //END - outer-container
+
 }
