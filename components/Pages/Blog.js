@@ -1,17 +1,16 @@
 // Blog.js
-import React, { Component } from 'react'
+import React from 'react'
 import _ from 'lodash'
 import config from '../../config'
 
 // Components
-import Header from '../Partials/Header'
 import BlogList from '../Partials/BlogList'
 import BlogSingle from '../Partials/BlogSingle'
 
 // Dispatcher
 import AppDispatcher from '../../dispatcher/AppDispatcher'
 
-export default class Blog extends Component {
+export default class Blog extends React.Component{
 
   componentWillMount(){
     this.getPageData()
@@ -50,7 +49,7 @@ export default class Blog extends Component {
     } else {
 
       const articles = data.articles
-      
+
       // Get current page slug
       const slug = this.props.params.slug
       const articles_object = _.indexBy(articles, 'slug')
@@ -58,10 +57,9 @@ export default class Blog extends Component {
       main_content = <BlogSingle article={ article } />
 
     }
-    
+
     return (
       <div>
-        <Header data={ data }/>
         <div id="main-content" className="container">
           <div className="row">
             <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -73,3 +71,5 @@ export default class Blog extends Component {
     )
   }
 }
+
+export default Blog;

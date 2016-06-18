@@ -1,0 +1,50 @@
+#siteHeader{
+
+
+
+
+
+  .logo {
+    position: relative;
+    width:100%;
+    @include v-margin($margin-bottom: $margin-medium);
+    text-align: center;
+    img{
+      width: 35%;
+      @include v-margin();
+      @include h-margin();
+    }
+    span{
+      @include v-margin();
+      font-family:$heading-font-family-black;
+      color:$black;
+      @include font-size($xl-font-size);
+    }
+    //logo gets smaller as page widens
+    @include mappy-bp(sm) {
+
+      img{
+        width: 30%;
+      }
+    }
+
+    @include mappy-bp(md) {
+
+      img{
+        width: 25%;
+      }
+    }
+
+    @include mappy-bp(lg) {
+
+      img{
+        width: 20%;
+      }
+    }
+
+
+
+  }
+
+
+}

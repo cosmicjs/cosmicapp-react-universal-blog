@@ -1,0 +1,6 @@
+//optional widths base, min 
+@mixin containers($container-width, $prefix:'min-', $prefix:'max-', $max-width:null, $min-width:null){
+  #{$prefix}width: map-get($containers, $container-width);
+  min-width:$min-width;
+  max-width:$max-width;
+}

@@ -1,0 +1,8 @@
+/* BEGIN Black */
+@font-face {
+	font-family: LithosPro-Regular;
+	@include fontdef-woff($font-path, $font-name, $font-version, "Regular");
+	font-weight: 900;
+	font-style: normal;
+}
+/* END Black */

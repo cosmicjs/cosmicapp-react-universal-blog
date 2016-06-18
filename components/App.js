@@ -1,5 +1,12 @@
 // App.js
-import React, { Component } from 'react'
+import React from 'react'
+
+import '../styles/custom.scss';
+
+
+
+//Images
+import Background from '../images/about-bg.jpg';
 
 // Dispatcher
 import AppDispatcher from '../dispatcher/AppDispatcher'
@@ -8,12 +15,16 @@ import AppDispatcher from '../dispatcher/AppDispatcher'
 import AppStore from '../stores/AppStore'
 
 // Components
-import Nav from './Partials/Nav'
+import SiteMenu from './Partials/SiteMenu'
 import Footer from './Partials/Footer'
 import Loading from './Partials/Loading'
+import Header from './Partials/Header'
 
-export default class App extends Component {
-  
+
+export default class App extends React.Component {
+
+
+
   // Add change listeners to stores
   componentDidMount(){
     AppStore.addChangeListener(this._onChange.bind(this))
@@ -35,8 +46,9 @@ export default class App extends Component {
   }
 
   render(){
-    
+
     const data = AppStore.data
+
 
     // Show loading for browser
     if(!data.ready){
@@ -58,10 +70,13 @@ export default class App extends Component {
     const Routes = React.cloneElement(this.props.children, { data: data })
 
     return (
-      <div>
-        <Nav data={ data }/>
-        { Routes }
-        <Footer data={ data }/>
+      <div id="outer-container">
+          <SiteMenu data={ data }/>
+          <Header data={ data }/>
+            <div id="main-content" className="container">
+              { Routes }
+              <Footer data={ data }/>
+           </div>
       </div>
     )
   }

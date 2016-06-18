@@ -1,0 +1,90 @@
+// ============================================================================
+// COLOUR ADJUSTMENTS AND FUNCTIONS
+// ============================================================================
+
+$colours: (
+  emerald: (
+    base: $emerald,
+    light: lighten($emerald, $tone-level),
+    dark: darken($emerald, $tone-level),
+    trans: transparentize($emerald, $trans-level)
+  ),
+
+  grey: (
+    base: $grey,
+    light:lighten($grey, $tone-level),
+    dark:darken($grey, $tone-level),
+    trans:transparentize($grey,  $trans-level)
+  ),
+
+  blue: (
+    base: $blue,
+    light: lighten($blue, $tone-level),
+    dark: darken($blue, $tone-level),
+    trans: transparentize($blue, $trans-level)
+  ),
+
+    red: (
+    base: $red,
+    light: lighten($red, $tone-level),
+    dark: darken($red, $tone-level),
+    trans: transparentize($red, $trans-level)
+  ),
+  persian-blue: (
+    base: $persian-blue,
+    light: lighten($persian-blue, $tone-level),
+    dark: darken($persian-blue, $tone-level),
+    trans: transparentize($persian-blue, $trans-level)
+  ),
+
+  turbo: (
+    base: $turbo,
+    light: lighten($turbo, $tone-level),
+    dark: darken($turbo, $tone-level),
+    trans: transparentize($turbo, $trans-level)
+  ),
+
+
+    violet: (
+      base: $violet,
+      light: lighten($violet, $tone-level),
+      dark: darken($violet, $tone-level),
+      trans: transparentize($violet, $trans-level)
+    ),
+);
+
+//from the colours
+@function colour($venture-colour, $colour-variant) {
+  // map inception
+  @return map-get(map-get($colours, $venture-colour), $colour-variant);
+
+}
+
+@each $color-key, $color-variants in $colours {
+   $base-color-value: map-get($color-variants, 'base');
+   $light-color-value: map-get($color-variants, 'light');
+   $dark-color-value: map-get($color-variants, 'dark');
+   $trans-color-value: map-get($color-variants, 'trans');
+
+   $keys: map-keys($color-variants);
+
+
+
+   &.#{$color-key} {
+     background-color: $base-color-value;
+
+
+       &-light {
+       background-color:$light-color-value;
+
+       }
+
+       &-dark {
+       background-color: $dark-color-value;
+       }
+
+       &-trans {
+       background-color: $trans-color-value;
+       }
+   }
+}

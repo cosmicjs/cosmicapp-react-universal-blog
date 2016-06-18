@@ -1,0 +1,46 @@
+html, body{
+
+  height:100%;
+  padding:0;
+  margin:0;
+
+  *{
+    padding:0;
+    margin:0;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  @include font-size($base-font-size);
+  font-family:$base-font-family;
+  background-color:$white;
+  color:colour(grey,dark);
+
+}
+
+h1,h2{
+  font-family: $heading-font-family-black;
+}
+
+
+h3,h4,h5,h6{
+  font-family: $heading-font-family;}
+
+
+h1,h2,h3,
+p{
+  @include v-margin($margin-bottom: $margin-medium);
+}
+
+ul{
+  list-style-type: none;
+}
+
+footer{
+
+
+}
