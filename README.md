@@ -42,3 +42,4 @@ export default {
   }
 }
 ```
+Cosmic JS makes a great [React CMS](https://cosmicjs.com/knowledge-base/react-cms) for your React apps.
