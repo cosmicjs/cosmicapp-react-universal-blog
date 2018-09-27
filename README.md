@@ -1,5 +1,5 @@
 # React Universal Blog
-##### [View a demo here](http://react-universal-blog.cosmicapp.co/)
+##### [View a demo here](https://cosmicjs.com/apps/react-universal)
 [Sign up for Cosmic JS](https://cosmicjs.com/) to start managing content for your websites and applications faster and easier.
 
 ##### About
